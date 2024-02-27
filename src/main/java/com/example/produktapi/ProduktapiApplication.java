@@ -10,4 +10,6 @@ public class ProduktapiApplication {
 		SpringApplication.run(ProduktapiApplication.class, args);
 	}
 
+	// Kommentar för att test push
+
 }
