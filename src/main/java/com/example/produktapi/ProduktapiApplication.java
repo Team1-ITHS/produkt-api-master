@@ -9,14 +9,4 @@ public class ProduktapiApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ProduktapiApplication.class, args);
 	}
-
-
-	// Kommentar för att test push
-
-	//Mia testar också
-
-
-	// adding some extra comments to master
-	//Mia adding again :)
-	//mia testing 3rd
 }
