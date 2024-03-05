@@ -15,7 +15,7 @@ public class ProductModelTests {
 
     @Test
     @DisplayName("Testing Title get-method")
-    void getTitleTest()gti {
+    void getTitleTest() {
         Assertions.assertEquals("Test Title", product.getTitle());
     }
 
