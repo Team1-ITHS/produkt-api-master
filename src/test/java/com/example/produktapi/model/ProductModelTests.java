@@ -15,7 +15,7 @@ public class ProductModelTests {
 
     @Test
     @DisplayName("Testing Title get-method")
-    void getTitleTest(){
+    void getTitleTest()gti {
         Assertions.assertEquals("Test Title", product.getTitle());
     }
 
@@ -38,6 +38,13 @@ public class ProductModelTests {
     void setTitleWithEmptyString(){
         product.setTitle("");
         Assertions.assertEquals("", product.getTitle());
+    }
+
+    @Test
+    @DisplayName("Testing Title set-method with long string")
+    void setTitleWithLongString(){
+        product.setTitle("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua");
+        Assertions.assertEquals("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua", product.getTitle());
     }
 
     @Test
