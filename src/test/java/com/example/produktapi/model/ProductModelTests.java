@@ -28,6 +28,13 @@ public class ProductModelTests {
 
     @Test
     @DisplayName("Testing Title set-method with special characters")
+    void setTitleWithExtraWhiteSpaces(){
+        product.setTitle("  Title   ");
+        Assertions.assertEquals("  Title   ", product.getTitle());
+    }
+
+    @Test
+    @DisplayName("Testing Title set-method with special characters")
     void setTitleWithSpecialCharacters(){
         product.setTitle("!#¤%=?@£$€");
         Assertions.assertEquals("!#¤%=?@£$€", product.getTitle());
