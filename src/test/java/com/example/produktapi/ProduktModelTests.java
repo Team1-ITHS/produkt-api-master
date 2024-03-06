@@ -2,8 +2,8 @@ package com.example.produktapi;
 
 import org.junit.jupiter.api.*;
 import org.springframework.boot.test.context.SpringBootTest;
-import com.example.produktapi.model.Product; //denna la Mia till nu
-import static org.junit.Assert.assertEquals; //denna la jag till
+import com.example.produktapi.model.Product;
+import static org.junit.Assert.assertEquals;
 
 
 @SpringBootTest
