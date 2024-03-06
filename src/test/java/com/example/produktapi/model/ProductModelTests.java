@@ -5,12 +5,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import com.example.produktapi.model.Product;
 import static org.junit.Assert.assertEquals;
 
-
 @SpringBootTest
 public class ProductModelTests {
-
-
-
 
     @Test //Mia:
     public void testGetPrice_with_correct_value() {
@@ -25,8 +21,6 @@ public class ProductModelTests {
         product.setPrice(29.99);  // Anropa setPrice med ett nytt pris
         assertEquals(29.99, product.getPrice(), 0.01); // Verifiera att getPrice nu returnerar det uppdaterade priset
     }
-
-
 
     @Test
     public void testSetPrice_with_negative_value() { //Mia
@@ -56,9 +50,6 @@ public class ProductModelTests {
         assertEquals(19.99, product.getPrice(), 0.01);   // Verifiera att getPrice fortfarande returnerar det tidigare priset (inget ändrat pris)
     }
 
-
-
-
     @Test
     public void testConstructor_with_correct_values() { //Mia
 
@@ -73,4 +64,10 @@ public class ProductModelTests {
         assertEquals("test_image.jpg", product.getImage());
     }
 
+    // Adding a test method just for testing imports and packages
+    @Test
+    @DisplayName("Testing")
+    void testMethod(){
+        Assertions.assertTrue(true);
+    }
 }
