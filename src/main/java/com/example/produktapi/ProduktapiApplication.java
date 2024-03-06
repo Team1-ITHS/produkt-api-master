@@ -10,3 +10,4 @@ public class ProduktapiApplication {
 		SpringApplication.run(ProduktapiApplication.class, args);
 	}
 }
+
