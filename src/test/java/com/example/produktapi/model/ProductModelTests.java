@@ -1,4 +1,4 @@
-package com.example.produktapi;
+package com.example.produktapi.model;
 
 import org.junit.jupiter.api.*;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 
 
 @SpringBootTest
-public class ProduktModelTests {
+public class ProductModelTests {
 
 
 
