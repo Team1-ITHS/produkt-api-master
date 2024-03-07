@@ -29,7 +29,7 @@ public class ProductModelTests {
     @DisplayName("Product title set-method with extra white spaces")
     void setTitleWithExtraWhiteSpaces(){
         Product product = new Product("  Test Title   ", 99.99, "Test Category", "This is a test description","image.jpg");
-        Assertions.assertEquals("  Title   ", product.getTitle()); // Method should be updated to remove extra white spaces
+        Assertions.assertEquals("  Test Title   ", product.getTitle()); // Method should be updated to remove extra white spaces
     }
 
     // Samuel
