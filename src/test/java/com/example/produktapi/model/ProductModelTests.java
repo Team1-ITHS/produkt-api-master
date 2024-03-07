@@ -6,59 +6,61 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 public class ProductModelTests {
 
-    private Product product;
-
-    @BeforeEach
-    void setup(){
-        product = new Product("Test Title", 99.99, "Test Category", "This is a test description","image.jpg");
-    }
-
+    // Samuel
     @Test
-    @DisplayName("Testing Title get-method")
+    @DisplayName("Product title get-method")
     void getTitleTest() {
+        Product product = new Product("Test Title", 99.99, "Test Category", "This is a test description","image.jpg");
         Assertions.assertEquals("Test Title", product.getTitle());
     }
 
+    // Samuel
     @Test
-    @DisplayName("Testing Title set-method with correct value")
+    @DisplayName("Product title set-method with correct value")
     void setTitleCorrectValue(){
+        Product product = new Product("Test Title", 99.99, "Test Category", "This is a test description","image.jpg");
         product.setTitle("New value");
         Assertions.assertEquals("New value", product.getTitle());
     }
 
+    // Samuel
     @Test
-    @DisplayName("Testing Title set-method with special characters")
+    @DisplayName("Product title set-method with extra white spaces")
     void setTitleWithExtraWhiteSpaces(){
-        product.setTitle("  Title   ");
-        Assertions.assertEquals("  Title   ", product.getTitle());
+        Product product = new Product("  Test Title   ", 99.99, "Test Category", "This is a test description","image.jpg");
+        Assertions.assertEquals("  Title   ", product.getTitle()); // Method should be updated to remove extra white spaces
     }
 
+    // Samuel
     @Test
-    @DisplayName("Testing Title set-method with special characters")
+    @DisplayName("Product title set-method with special characters")
     void setTitleWithSpecialCharacters(){
-        product.setTitle("!#¤%=?@£$€");
-        Assertions.assertEquals("!#¤%=?@£$€", product.getTitle());
+        Product product = new Product("!#¤%=?@£$€", 99.99, "Test Category", "This is a test description","image.jpg");
+        Assertions.assertEquals("!#¤%=?@£$€", product.getTitle()); // Method should be updated to only allow certain characters
     }
 
+    // Samuel
     @Test
-    @DisplayName("Testing Title set-method with empty string")
+    @DisplayName("Product title set-method with empty string")
     void setTitleWithEmptyString(){
-        product.setTitle("");
-        Assertions.assertEquals("", product.getTitle());
+        Product product = new Product("", 99.99, "Test Category", "This is a test description","image.jpg");
+        Assertions.assertEquals("", product.getTitle()); // Method should be updated to not allow empty string as title
     }
 
+    // Samuel
     @Test
-    @DisplayName("Testing Title set-method with long string")
+    @DisplayName("Product title set-method with too long string")
     void setTitleWithLongString(){
-        product.setTitle("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua");
-        Assertions.assertEquals("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua", product.getTitle());
+        Product product = new Product("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua", 99.99, "Test Category", "This is a test description","image.jpg");
+        Assertions.assertEquals("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua", product.getTitle()); // Method should be updated to only allow a set string length
     }
 
+    // Samuel
     @Test
-    @DisplayName("Testing Title set-method with null")
+    @DisplayName("Product title set-method with null")
     void setTitleWithNull(){
-        product.setTitle(null);
-        Assertions.assertNull(product.getTitle());
+        Product product = new Product(null, 99.99, "Test Category", "This is a test description","image.jpg");
+        Assertions.assertNull(product.getTitle()); // Method should be updated to not allow title as null
     }
 
     // Adding a test method just for testing imports and packages
