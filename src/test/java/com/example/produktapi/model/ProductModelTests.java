@@ -1,6 +1,5 @@
 package com.example.produktapi.model;
 
-import com.example.produktapi.model.Product;
 import org.junit.jupiter.api.*;
 import org.springframework.boot.test.context.SpringBootTest;
 import static org.junit.Assert.*;
