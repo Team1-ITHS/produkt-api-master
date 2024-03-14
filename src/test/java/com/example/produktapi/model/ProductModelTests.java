@@ -124,6 +124,51 @@ public class ProductModelTests {
         assertEquals("test_image.jpg", product.getImage());
     }
 
+    @Test
+    @DisplayName("Product-id set-method with correct values")
+    void setIdWithCorrectValues(){
+//        Testing Product-id with correct values
+        Product product = new Product();
+        product.setId(1);
+        Assertions.assertEquals(1, product.getId(), "Product Id did not match");
+    }
+
+    @Test
+    @DisplayName("Product-id set-method with incorrect values")
+    void setIdWithinCorrectValues(){
+//        Testing Product-id with negative values
+        Product product = new Product();
+        product.setId(-1);
+        Assertions.assertEquals(-1, product.getId(), "Product Id did not match"); // Method should be updated to only set positive integer as id.
+    }
+
+    @Test
+    @DisplayName("Product-id set-method with zero value")
+    void setIdWithZero(){
+//        Testing Product-id with Zero value
+        Product product = new Product();
+        product.setId(0);
+        Assertions.assertEquals(0, product.getId(), "Product Id did not match"); // Method should be updated to set id above 0.
+    }
+
+    @Test
+    @DisplayName("Product-id set-method with larger value")
+    void setIdWithLargerValue(){
+//        Testing Product-id with larger values
+        Product product = new Product();
+        product.setId(1000000000);
+        Assertions.assertEquals(1000000000, product.getId(), "Product Id did not match"); // Method should be updated to throw error when setting id for larger value.
+    }
+
+    @Test
+    @DisplayName("Product-id set-method with null value")
+    void setIdWithNullValue(){
+//        Testing Product-id with null value
+        Product product = new Product();
+        product.setId(null);
+        Assertions.assertNull(product.getId(), "Product Id did not match"); // Method should be updated to throw error when setting id with null value.
+    }
+
     // Adding a test method just for testing imports and packages
     @Test
     @DisplayName("Testing")
