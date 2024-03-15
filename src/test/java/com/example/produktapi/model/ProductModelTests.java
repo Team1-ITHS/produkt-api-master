@@ -124,7 +124,7 @@ public class ProductModelTests {
         assertEquals("test_image.jpg", product.getImage());
     }
 
-    @Test
+    @Test //divya
     @DisplayName("Product-id set-method with correct values")
     void setIdWithCorrectValues(){
 //        Testing Product-id with correct values
@@ -133,7 +133,7 @@ public class ProductModelTests {
         Assertions.assertEquals(1, product.getId(), "Product Id did not match");
     }
 
-    @Test
+    @Test //divya
     @DisplayName("Product-id set-method with incorrect values")
     void setIdWithinCorrectValues(){
 //        Testing Product-id with negative values
@@ -142,7 +142,7 @@ public class ProductModelTests {
         Assertions.assertEquals(-1, product.getId(), "Product Id did not match"); // Method should be updated to only set positive integer as id.
     }
 
-    @Test
+    @Test //divya
     @DisplayName("Product-id set-method with zero value")
     void setIdWithZero(){
 //        Testing Product-id with Zero value
@@ -151,7 +151,7 @@ public class ProductModelTests {
         Assertions.assertEquals(0, product.getId(), "Product Id did not match"); // Method should be updated to set id above 0.
     }
 
-    @Test
+    @Test //divya
     @DisplayName("Product-id set-method with larger value")
     void setIdWithLargerValue(){
 //        Testing Product-id with larger values
@@ -160,7 +160,7 @@ public class ProductModelTests {
         Assertions.assertEquals(1000000000, product.getId(), "Product Id did not match"); // Method should be updated to throw error when setting id for larger value.
     }
 
-    @Test
+    @Test //divya
     @DisplayName("Product-id set-method with null value")
     void setIdWithNullValue(){
 //        Testing Product-id with null value
@@ -168,6 +168,17 @@ public class ProductModelTests {
         product.setId(null);
         Assertions.assertNull(product.getId(), "Product Id did not match"); // Method should be updated to throw error when setting id with null value.
     }
+
+    @Test //divya
+    @DisplayName("Product-Image set-method with null value")
+    void setImageWithcorrectstring(){
+//        Testing Product-Image with correct string
+        Product product = new Product();
+        product.setImage("sunset");
+        Assertions.assertEquals("sunset", product.getImage(), "Product Image did not match");
+    }
+
+
 
     // Adding a test method just for testing imports and packages
     @Test
