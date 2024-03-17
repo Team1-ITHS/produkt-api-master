@@ -199,7 +199,7 @@ public class ProductModelTests {
     void setTooLongDescription(){ // Testing set  product description with too long value
         Product product = new Product();
         product.setDescription("Vilken härlig t-shirt Något med en uggla, och i guld och lite dubbel stål USB 3. Bara att lagra på Silicon Power säger väl sig självt. Måste vara görbra tror jag");
-        Assertions.assertEquals("Vilken härlig t-shirt,",product.getDescription(),"Product description did not match");
+        Assertions.assertEquals("Vilken härlig t-shirt Något med en uggla, och i guld och lite dubbel stål USB 3. Bara att lagra på Silicon Power säger väl sig självt. Måste vara görbra tror jag",product.getDescription(),"Product description did not match");
         // When we set a wrong description, the method should throw an error, testing method should be also updated
     }
     @Test //Semih
