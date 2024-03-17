@@ -209,7 +209,46 @@ public class ProductModelTests {
         Assertions.assertEquals("", product.getImage(), "Product Image should not be empty string" ); // Method should be updated to not set empty string as a product image
     }
 
+    @Test //Semih
+    @DisplayName("Product description-set a correct description")
+    void setCorrectDescription(){ // Testing set  product description with correct value
+        Product product = new Product();
+        product.setDescription("Fin väska me plats för dator");
+        Assertions.assertEquals("Fin väska me plats för dator",product.getDescription(),"Product description did not match");
 
+    }
+    @Test //Semih
+    @DisplayName("Product description-set a wrong description")
+    void setWrongtDescription(){ // Testing set  product description with wrong value
+        Product product = new Product();
+        product.setDescription("Vilken härlig t-shirt,");
+        Assertions.assertEquals("Vilken härlig t-shirt,",product.getDescription(),"Product description did not match");
+        // When we set a wrong description, the method should throw an error, testing method should be also updated
+    }
+    @Test //Semih
+    @DisplayName("Product description-set a too long description")
+    void setTooLongDescription(){ // Testing set  product description with too long value
+        Product product = new Product();
+        product.setDescription("Vilken härlig t-shirt Något med en uggla, och i guld och lite dubbel stål USB 3. Bara att lagra på Silicon Power säger väl sig självt. Måste vara görbra tror jag");
+        Assertions.assertEquals("Vilken härlig t-shirt Något med en uggla, och i guld och lite dubbel stål USB 3. Bara att lagra på Silicon Power säger väl sig självt. Måste vara görbra tror jag",product.getDescription(),"Product description did not match");
+        // When we set a wrong description, the method should throw an error, testing method should be also updated
+    }
+    @Test //Semih
+    @DisplayName("Product description-set a too short description")
+    void setTooShortDescription(){ // Testing set  product description with too short value
+        Product product = new Product();
+        product.setDescription("Vilken");
+        Assertions.assertEquals("Vilken",product.getDescription(),"Product description did not match");
+        // When we set a too Short description, the method should throw an error, testing method should be also updated
+    }
+    @Test //Semih
+    @DisplayName("Product description-set a no value description")
+    void setNoValueDescription(){ // Testing set  product description with no value
+        Product product = new Product();
+        product.setDescription(null);
+        Assertions.assertNull(product.getDescription());
+        // When we set a no value description, the method should throw an error, testing method should be also updated
+    }
 
     // Adding a test method just for testing imports and packages
     @Test
@@ -217,4 +256,5 @@ public class ProductModelTests {
     void testMethod(){
         Assertions.assertTrue(true);
     }
+
 }
