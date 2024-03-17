@@ -170,12 +170,43 @@ public class ProductModelTests {
     }
 
     @Test //divya
-    @DisplayName("Product-Image set-method with null value")
-    void setImageWithcorrectstring(){
-//        Testing Product-Image with correct string
+    @DisplayName("Product-Image set-method with correct image name")
+    void setImageWithcorrectimagename(){
+//        Testing Product-Image with correct image name
         Product product = new Product();
-        product.setImage("sunset");
-        Assertions.assertEquals("sunset", product.getImage(), "Product Image did not match");
+        product.setImage("sunset.jpg");
+        Assertions.assertEquals("sunset.jpg", product.getImage(), "Product Image name did not match");
+    }
+
+    @Test //divya
+    @DisplayName("Product-Image set-method with correct image format")
+    void testImageCorrectFormat(){
+//        Testing Product-Image for correct format
+        Product product = new Product();
+        product.setImage("sunset.jpg");
+        String Image =  product.getImage();
+        String substring = Image.substring(Image.length() - 3); // to access the format of the image
+        Assertions.assertEquals("jpg", substring, "Format of the Image does not match" );
+    }
+
+    @Test //divya
+    @DisplayName("Product-Image set-method with incorrect image format")
+    void testImageIncorrectFormat(){
+//        Testing Product-Image for incorrect format
+        Product product = new Product();
+        product.setImage("sunset.png");
+        String Image =  product.getImage();
+        String substring = Image.substring(Image.length() - 3); // to access the format of the image
+        Assertions.assertNotEquals("jpg", substring, "Format of the Image does not match" );
+    }
+
+    @Test //divya
+    @DisplayName("Product-Image set-method with empty string")
+    void testProductImageWithNull(){
+//        Testing Product-Image with empty string
+        Product product = new Product();
+        product.setImage("");
+        Assertions.assertEquals("", product.getImage(), "Product Image should not be empty string" ); // Method should be updated to not set empty string as a product image
     }
 
 
