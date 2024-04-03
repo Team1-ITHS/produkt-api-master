@@ -2,7 +2,6 @@ package com.example.produktapi.model;
 
 import org.junit.jupiter.api.*;
 import org.springframework.boot.test.context.SpringBootTest;
-import static org.junit.Assert.*;
 
 @SpringBootTest
 public class ProductModelTests {
